@@ -12,7 +12,9 @@ import {TemplateModule} from "../template/template.module";
     CommonModule
   ],
   exports:[
-    LayoutModule, IconsModule, TemplateModule
+    LayoutModule,
+    IconsModule,
+    TemplateModule
   ]
 })
 export class CoreModule { }
