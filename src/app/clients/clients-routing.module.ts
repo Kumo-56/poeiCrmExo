@@ -5,7 +5,7 @@ import {EditClientComponent} from "./pages/edit-client/edit-client.component";
 import {AddClientComponent} from "./pages/add-client/add-client.component";
 
 const routes: Routes = [
-  {path:'',redirectTo:'list',pathMatch:'full'},
+  {path:'',pathMatch:'full',redirectTo:'list'},
   {path:'list',component:ClientsListComponent},
   {path:'edit',component:EditClientComponent},
   {path:'add',component:AddClientComponent},

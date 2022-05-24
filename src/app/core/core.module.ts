@@ -9,7 +9,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { Nav2Component } from './components/nav2/nav2.component';
 import { Header2Component } from './components/header2/header2.component';
 import { Footer2Component } from './components/footer2/footer2.component';
-import {RouterModule} from "@angular/router";
+import {RouterLinkActive, RouterModule} from "@angular/router";
 
 
 @NgModule({

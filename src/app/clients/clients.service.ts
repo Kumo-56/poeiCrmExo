@@ -1,29 +1,33 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Client} from "../core/models/client";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientsService {
+  private url:string='http://localhost/3000/clients';
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  getClientById(id: number): Client{
-    return new Client();
+  getClientById(id: number): Observable<Client>{
+    return this.httpClient.get<Client>(this.url+'/'+id);
   }
 
-  getClients():Client[] {
-    return [new Client()];
+  getClients():Observable<Client[]>{
+    return this.httpClient.get<Client[]>(this.url);
   }
 
-  deleteClientById(id:number):void{
-
+  deleteClientById(id:number):Observable<void>{
+    return this.httpClient.delete<void>(this.url+'/'+id);
   }
 
-  updateClient(client:Client):void{
-
+  updateClient(client:Client):Observable<void>{
+    return this.httpClient.put<void>(this.url+'/'+client.id,client);
   }
 
-  addClient(client:Client):void{
-    
+  addClient(client:Client):Observable<void>{
+    return this.httpClient.post<void>(this.url, client);
   }
 }

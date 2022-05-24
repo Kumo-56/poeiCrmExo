@@ -10,7 +10,7 @@
   <ul class="nav nav-pills flex-column mb-auto">
     <li><a class="nav-link text-white" [routerLink]="['/','login', 'signup']" [routerLinkActive]="'menu-actif'">S'enregistrer</a></li>
     <li><a class="nav-link text-white" [routerLink]="'orders'" [routerLinkActive]="'menu-actif'">Orders</a></li>
-    <li><a class="nav-link text-white" [routerLink]="'clients'" [routerLinkActive]="'menu-actif'">Clients</a></li>
+    <li><a class="nav-link text-white" [routerLink]="'clients'" [routerLinkActive]="'menu-actif'" [routerLinkActiveOptions]="{ exact: true }">Clients</a></li>
     <li><a class="nav-link text-white" [routerLink]="['/','clients', 'add']" [routerLinkActive]="'menu-actif'">Add client</a></li>
     <li><a class="nav-link text-white" [routerLink]="['/','clients', 'edit']" [routerLinkActive]="'menu-actif'">Edit client</a></li>
 
