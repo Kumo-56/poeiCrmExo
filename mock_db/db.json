@@ -1,0 +1,32 @@
+{
+  "clients" : [
+    {
+      "id": 1,
+      "nom": "Morane",
+      "prenom": "Bob",
+      "adresse": "bd",
+      "societe": "bande"
+    },
+    {
+      "id": 2,
+      "nom": "Wayne",
+      "prenom": "Bruce",
+      "adresse": "Gotham",
+      "societe": "Batmob"
+    },
+    {
+      "id": 3,
+      "nom": "Jones",
+      "prenom": "Indiana",
+      "adresse": "crypte",
+      "societe": "excavatrice"
+    },
+    {
+      "id": 4,
+      "nom": "Bond",
+      "prenom": "James",
+      "adresse": "????",
+      "societe": "MI6"
+    }
+  ]
+}

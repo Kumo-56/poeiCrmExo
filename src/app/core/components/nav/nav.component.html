@@ -1,1 +1,21 @@
-<p>nav works!</p>
+
+<nav>
+
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" >
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+
+    <span class="fs-4">Menu</span>
+  </a>
+  <hr>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li><a class="nav-link text-white" [routerLink]="['/','login', 'signup']" [routerLinkActive]="'menu-actif'">S'enregistrer</a></li>
+    <li><a class="nav-link text-white" [routerLink]="'orders'" [routerLinkActive]="'menu-actif'">Orders</a></li>
+    <li><a class="nav-link text-white" [routerLink]="'clients'" [routerLinkActive]="'menu-actif'">Clients</a></li>
+    <li><a class="nav-link text-white" [routerLink]="['/','clients', 'add']" [routerLinkActive]="'menu-actif'">Add client</a></li>
+    <li><a class="nav-link text-white" [routerLink]="['/','clients', 'edit']" [routerLinkActive]="'menu-actif'">Edit client</a></li>
+
+  </ul>
+  <hr>
+
+</div>
+</nav>

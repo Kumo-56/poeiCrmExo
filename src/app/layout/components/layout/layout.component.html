@@ -17,7 +17,7 @@
 <main [ngClass]="{'close-aside':!open}">
   <div class="shadow position-fixed">
   </div>
-  <aside>
+  <aside class="text-white bg-dark">
     <div class="scroller">
       <ng-content select=".tr-nav"> </ng-content>
     </div>
@@ -26,9 +26,8 @@
     <div class="contents">
       <ng-content select=".tr-content"> </ng-content>
     </div>
-    <footer>
+    <footer >
       <ng-content select=".tr-footer"> </ng-content>
-
     </footer>
   </div>
 </main>

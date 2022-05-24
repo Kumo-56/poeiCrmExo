@@ -15,7 +15,7 @@ main {
 aside {
   background: var(--app-darklight2);
   width: 250px;
-  min-height: 100vh;
+  min-height: calc(100vh - 65px);
   position: fixed;
   z-index: 1000;
   .scroller {
@@ -41,13 +41,13 @@ aside {
 .page {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 65px);
+  min-height: calc(100vh - 96px);
 }
 .contents {
   flex-grow: 1;
 }
 footer {
-  background: var(--app-light);
+  height: 50px;
 }
 @media (min-width: $md-breakpoint) {
   .shadow {
