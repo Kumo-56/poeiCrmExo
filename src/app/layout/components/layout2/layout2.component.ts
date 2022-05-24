@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Layout2Component implements OnInit {
 
-  constructor() { }
+  //public car doit être accessible depuis le DOM
+  public open:boolean;
+  constructor() {  this.open=true;}
 
   ngOnInit(): void {
+  }
+
+
+  public toggle():void{
+    this.open=!this.open;
   }
 
 }

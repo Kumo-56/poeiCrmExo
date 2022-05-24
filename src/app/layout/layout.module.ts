@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import { LayoutComponent } from './components/layout/layout.component';
 import { Layout2Component } from './components/layout2/layout2.component';
 
@@ -9,7 +9,7 @@ import { Layout2Component } from './components/layout2/layout2.component';
     Layout2Component
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports:[
     LayoutComponent,

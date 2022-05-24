@@ -1,18 +1,30 @@
+<ng-template #tplIconCloseNav>
+  <ng-content select=".tr-icon-close"></ng-content>
+</ng-template>
+<ng-template #tplIconOpenNav>
+  <ng-content select=".tr-icon-open"></ng-content>
+</ng-template>
+
 <header class="fixed-top">
+
+  <span (click)="toggle()">
+    <ng-container *ngIf="open;  then tplIconCloseNav else tplIconOpenNav" ></ng-container>
+  </span>
+
+  <!--  <button (click)="toggle()">ouvrir/fermer</button>-->
   <ng-content select=".tr-header"> </ng-content>
 </header>
-<main>
+<main [ngClass]="{'close-aside':!open}">
   <div class="shadow position-fixed">
   </div>
-<nav>
+  <aside>
     <div class="scroller">
       <ng-content select=".tr-nav"> </ng-content>
     </div>
-</nav>
-
+  </aside>
   <div class="page">
     <div class="contents">
-      <ng-content select=".tr-content"> </ng-content>
+      pages contents
     </div>
     <footer>
       <ng-content select=".tr-footer"> </ng-content>
