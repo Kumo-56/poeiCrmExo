@@ -1,2 +1,47 @@
-<p>edit-client works!</p>
-<a [routerLink]="'./../add'" class="btn btn-primary">Ajouter</a>
+<app-nav-top-bar></app-nav-top-bar>
+
+<ng-template  #tpEditClientInformation >
+ <div *ngIf="client">
+  <div class="form-row">
+    <div class="form-group">
+      <label for="inputUpdateName">Nom: </label>
+      <input type="text" class="form-control" id="inputUpdateName" placeholder="{{client.nom}}">
+    </div>
+    <div class="form-group ">
+      <label for="inputUpdatePrenom">Prénom: </label>
+      <input type="text" class="form-control" id="inputUpdatePrenom" placeholder="{{client.prenom}}">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="inputUpdateSociete">Société: </label>
+      <input type="text" class="form-control" id="inputUpdateSociete" placeholder="{{client.societe}}">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="inputUpdateAdresse">Adresse: </label>
+      <input type="text" class="form-control" id="inputUpdateAdresse" placeholder="{{client.adresse}}">
+    </div>
+  </div>
+ </div>
+  <button class="btn btn-primary" (click)="updateClient()">Valider</button>
+</ng-template>
+
+<ng-template #tpDisplayClientInformation>
+
+  <div *ngIf="client">
+  <p>{{client.id}}</p>
+  <h2> {{client.nom}}</h2>
+  <h2> {{client.prenom}}</h2>
+  <p> {{client.adresse}}</p>
+  <p> {{client.societe}}</p>
+  </div>
+  <button class="btn btn-primary" (click)="switchUpdate()">Modifier</button>
+</ng-template>
+
+<div>
+  <ng-container *ngIf="!update; then tpDisplayClientInformation else tpEditClientInformation " ></ng-container>
+</div>
+
+

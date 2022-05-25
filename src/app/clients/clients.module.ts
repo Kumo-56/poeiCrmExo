@@ -5,13 +5,15 @@ import { ClientsRoutingModule } from './clients-routing.module';
 import { ClientsListComponent } from './pages/clients-list/clients-list.component';
 import { AddClientComponent } from './pages/add-client/add-client.component';
 import { EditClientComponent } from './pages/edit-client/edit-client.component';
+import { NavTopBarComponent } from './components/nav-top-bar/nav-top-bar.component';
 
 
 @NgModule({
   declarations: [
     ClientsListComponent,
     AddClientComponent,
-    EditClientComponent
+    EditClientComponent,
+    NavTopBarComponent
   ],
   imports: [
     CommonModule,

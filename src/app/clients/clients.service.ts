@@ -7,12 +7,13 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ClientsService {
-  private url:string='http://localhost/3000/clients';
+  private url:string='http://localhost:3000/clients';
 
   constructor(private httpClient: HttpClient) { }
 
   getClientById(id: number): Observable<Client>{
-    return this.httpClient.get<Client>(this.url+'/'+id);
+    //console.log(this.httpClient.get<Client>(this.url+'/'+id));
+    return this.httpClient.get<Client>(`${this.url}/${id}`);
   }
 
   getClients():Observable<Client[]>{
