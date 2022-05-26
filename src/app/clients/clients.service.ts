@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Client} from "../core/models/client";
 import {Observable} from "rxjs";
+import {AuthentificationService} from "../core/services/authentification.service";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {Observable} from "rxjs";
 export class ClientsService {
   private url:string='http://localhost:3000/clients';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private authService:AuthentificationService) { }
 
   getClientById(id: number): Observable<Client>{
     //console.log(this.httpClient.get<Client>(this.url+'/'+id));

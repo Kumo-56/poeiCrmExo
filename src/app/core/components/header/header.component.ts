@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthentificationService} from "../../services/authentification.service";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public connected:boolean =false;
+  public errorMsg:string ='';
+  constructor(private authServices:AuthentificationService) { }
 
   ngOnInit(): void {
+    this.authServices.connected$.subscribe({
+      next:(statutConnexion)=>{ this.connected=statutConnexion;
+        },
+      error:(err )=> {this.errorMsg=err;}
+    })
   }
 
 }

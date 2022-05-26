@@ -1,32 +1,60 @@
 {
-  "clients" : [
+  "clients": [
     {
       "id": 1,
-      "nom": "Morane",
-      "prenom": "Bob",
-      "adresse": "bd",
-      "societe": "bande"
+      "nom": "Moranelff",
+      "prenom": "Boblff",
+      "societe": "bandefffl",
+      "adresse": "bdlfff",
+      "fiabilite": "CLASSIQUE"
     },
     {
       "id": 2,
       "nom": "Wayne",
       "prenom": "Bruce",
+      "societe": "Batmob",
       "adresse": "Gotham",
-      "societe": "Batmob"
+      "fiabilite": "CLASSIQUE"
     },
     {
       "id": 3,
       "nom": "Jones",
       "prenom": "Indiana",
+      "societe": "excavatrice",
       "adresse": "crypte",
-      "societe": "excavatrice"
+      "fiabilite": "CLASSIQUE"
     },
     {
       "id": 4,
       "nom": "Bond",
       "prenom": "James",
+      "societe": "MI6",
       "adresse": "????",
-      "societe": "MI6"
+      "fiabilite": "CLASSIQUE"
+    },
+    {
+      "id": 5,
+      "nom": "jjj",
+      "prenom": "jjjjjjj",
+      "societe": "jjjjjjjj",
+      "adresse": "jjjjjjjjj",
+      "fiabilite": "CLASSIQUE"
+    },
+    {
+      "id": 6,
+      "nom": "ggggggg",
+      "prenom": "ggggggggg",
+      "societe": "gggggggg",
+      "adresse": "ggggggggg",
+      "fiabilite": "CLASSIQUE"
+    },
+    {
+      "id": 7,
+      "nom": "1111111111",
+      "prenom": "1111111111",
+      "societe": "1111111111",
+      "adresse": "11111111111",
+      "fiabilite": "CLASSIQUE"
     }
   ]
 }

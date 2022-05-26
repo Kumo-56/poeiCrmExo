@@ -1,1 +1,22 @@
-<p>sign-up works!</p>
+<main role="main">
+  <div class="form-container">
+    <form method="POST" action="submit">
+      <h1 class="form-heading">Connexion</h1>
+      <div class="form-bloc">
+        <div class="form-input form-field">
+          <label for="login">Identifiant</label>
+          <input type="text" id="login" name="login" #mail required />
+        </div>
+
+        <div class="form-input form-field">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" #pwd required />
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="button-valide">Validé</button>
+      </div>
+    </form>
+  </div>
+</main>

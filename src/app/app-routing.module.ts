@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
-
+//TODO: Mettre en place les guards
 const routes: Routes = [
 
   {path:'', pathMatch:'full', redirectTo:'login'},

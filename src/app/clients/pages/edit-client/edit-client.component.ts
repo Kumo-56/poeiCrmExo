@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ClientsService} from "../../clients.service";
 import {Client} from "../../../core/models/client";
 import { ActivatedRoute } from '@angular/router';
@@ -12,6 +12,10 @@ export class EditClientComponent implements OnInit {
   public client?:Client;
   public clientId?:number;
   public update:boolean;
+  @ViewChild('modal') private modalComponent:any;
+  @ViewChild('dialog') private dialogComponent:any;
+
+
   constructor(private route: ActivatedRoute,private clientsService: ClientsService) {
     this.update=false;
   }
@@ -35,8 +39,37 @@ export class EditClientComponent implements OnInit {
     this.update=!this.update;
   }
 
-  updateClient():void{
-    this.switchUpdate();
+  newClient():Client {
+    return new Client(this.client);
+  }
 
+  private setMsg():string{
+    return this.update?"La mofification a été prise en compte":"";
+  }
+
+  private setTitle():string {
+    return this.client!=null? "Modification du client: "+this.client.nom:"client inconnu";
+  }
+
+  displayDialog():void{
+    let title=this.setTitle();
+    let msg=this.setMsg();
+    this.dialogComponent.openDialog(title,msg );
+  }
+
+  private displayModal():void{
+    let title=this.setTitle();
+    let msg=this.setMsg();
+    this.modalComponent.open(title, msg);
+  }
+
+  //TODO: voir pour la gestion de la modale par rapport aux templates
+  updateClient():void{
+    let clientUpdate= this.newClient();
+    this.clientsService.updateClient(clientUpdate).subscribe();
+    this.displayDialog();
+
+    console.log(this.dialogComponent.isClosed);
+    this.switchUpdate();
   }
 }

@@ -1,14 +1,14 @@
 <app-nav-top-bar></app-nav-top-bar>
 <div class="d-flex justify-content-center">
-  <form>
+  <form (ngSubmit)="addClient()" #addClientForm="ngForm">
     <div class="form-row">
       <div class="form-group">
         <label for="inputAddName">Nom</label>
-        <input type="text" class="form-control" id="inputAddName" placeholder="nom">
+        <input type="text" class="form-control" id="inputAddName" [(ngModel)]="nom"  name="clientNom" placeholder="nom">
       </div>
       <div class="form-group ">
         <label for="inputAddPrenom">Prénom</label>
-        <input type="text" class="form-control" id="inputAddPrenom" placeholder="Prenom">
+        <input type="text" class="form-control" id="inputAddPrenom" [(ngModel)]="prenom"  name="clientPrenom" placeholder="Prenom">
       </div>
     </div>
     <div class="form-row">
@@ -24,10 +24,15 @@
     <div class="form-row">
       <div class="form-group">
         <label for="inputAddSociete">Société</label>
-        <input type="text" class="form-control" id="inputAddSociete" placeholder="Societe">
+        <input type="text" class="form-control" id="inputAddSociete" [(ngModel)]="societe"  name="clientSociete" placeholder="Societe">
+      </div>
+      <div class="form-group">
+        <label for="inputAddAdresse">Adresse: </label>
+        <input type="text" class="form-control" id="inputAddAdresse" [(ngModel)]="adresse"  name="clientAdresse" placeholder="Adresse">
       </div>
     </div>
 
-    <button type="submit" class="btn btn-secondary">Sign in</button>
+    <button type="submit" class="btn btn-secondary">Ajouter</button>
   </form>
 </div>
+<app-modal #addClientModal></app-modal>

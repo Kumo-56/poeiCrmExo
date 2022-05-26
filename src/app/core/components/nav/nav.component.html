@@ -16,6 +16,13 @@
 
   </ul>
   <hr>
-
+<div>
+  <button *ngIf="!connected" (click)="connect()">
+    Connection
+  </button>
+  <button  *ngIf="connected" (click)="disconnect()">
+    Déconnection
+  </button>
+</div>
 </div>
 </nav>

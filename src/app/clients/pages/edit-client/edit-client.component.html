@@ -2,46 +2,61 @@
 
 <ng-template  #tpEditClientInformation >
  <div *ngIf="client">
+
+   <form (ngSubmit)="updateClient()" #clientUpdateForm="ngForm"  >
+
   <div class="form-row">
     <div class="form-group">
       <label for="inputUpdateName">Nom: </label>
-      <input type="text" class="form-control" id="inputUpdateName" placeholder="{{client.nom}}">
+      <input type="text" class="form-control" id="inputUpdateName" [(ngModel)]="client.nom"  name="clientNom"  placeholder="{{client.nom}}">
     </div>
     <div class="form-group ">
       <label for="inputUpdatePrenom">Prénom: </label>
-      <input type="text" class="form-control" id="inputUpdatePrenom" placeholder="{{client.prenom}}">
+      <input type="text" class="form-control" id="inputUpdatePrenom"  [(ngModel)]="client.prenom" name="clientPrenom" placeholder="{{client.prenom}}">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="inputUpdateSociete">Société: </label>
-      <input type="text" class="form-control" id="inputUpdateSociete" placeholder="{{client.societe}}">
+      <input type="text" class="form-control" id="inputUpdateSociete"  [(ngModel)]="client.societe"  name="clientSociete" placeholder="{{client.societe}}">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="inputUpdateAdresse">Adresse: </label>
-      <input type="text" class="form-control" id="inputUpdateAdresse" placeholder="{{client.adresse}}">
+      <input type="text" class="form-control" id="inputUpdateAdresse"  [(ngModel)]="client.adresse"  name="clientAdresse" placeholder="{{client.adresse}}">
     </div>
   </div>
+
+
+  <button class="btn btn-primary">Valider</button>
+  </form>
  </div>
-  <button class="btn btn-primary" (click)="updateClient()">Valider</button>
 </ng-template>
 
 <ng-template #tpDisplayClientInformation>
 
   <div *ngIf="client">
+    <h4>Id: </h4>
   <p>{{client.id}}</p>
-  <h2> {{client.nom}}</h2>
-  <h2> {{client.prenom}}</h2>
+    <h4>Nom: </h4>
+  <p> {{client.nom}}</p>
+    <h4>Prénom: </h4>
+  <p> {{client.prenom}}</p>
+    <h4>Adresse: </h4>
   <p> {{client.adresse}}</p>
+    <h4>Société: </h4>
   <p> {{client.societe}}</p>
   </div>
   <button class="btn btn-primary" (click)="switchUpdate()">Modifier</button>
 </ng-template>
 
 <div>
+
   <ng-container *ngIf="!update; then tpDisplayClientInformation else tpEditClientInformation " ></ng-container>
+  <app-modal #modal></app-modal>
+  <app-dialog #dialog></app-dialog>
+
 </div>
 
 

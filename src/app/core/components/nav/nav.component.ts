@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthentificationService} from "../../services/authentification.service";
 
 @Component({
   selector: 'app-nav',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
-  constructor() { }
+  public connected=false;
+  constructor(private authServices:AuthentificationService) { }
 
   ngOnInit(): void {
+    this.authServices.connected$.subscribe({
+      next:(statutConnexion)=>{ this.connected=statutConnexion;}
+    })
+  }
+
+
+  connect():void{
+    this.authServices.connect();
+  }
+
+  disconnect():void{
+    this.authServices.disconnect();
   }
 
 }
