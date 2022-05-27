@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../../core/models/product";
 import {Location} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ProductsService} from "../../products.service";
 
 @Component({
   selector: 'app-card-product',
@@ -13,21 +14,20 @@ export class CardProductComponent implements OnInit {
 
   constructor(private location: Location,
               private router:Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private productsService:ProductsService) {
   }
 
   ngOnInit(): void {
   }
 
   deleteProduct(id:number):void {
-    this.router.navigate(['./../delete/',id], { relativeTo: this.route });
+    console.log(id);
+    this.productsService.deleteProductById(id).subscribe();
   }
 
   editProduct(id:number):void {
     this.router.navigate(['./../edit/',id], { relativeTo: this.route });
   }
-
-
-
 
 }
