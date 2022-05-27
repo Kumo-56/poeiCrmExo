@@ -56,5 +56,47 @@
       "adresse": "11111111111",
       "fiabilite": "CLASSIQUE"
     }
+  ],
+  "products":[
+    {
+      "id": 1,
+      "denomination": "pomme",
+      "societe": "nature",
+      "reference": "11111111111",
+      "prixHT": "5",
+      "tva": "20"
+    },
+    {
+      "id": 2,
+      "denomination": "raisin",
+      "societe": "nature",
+      "reference": "22",
+      "prixHT": "5",
+      "tva": "20"
+    },
+    {
+      "id": 3,
+      "denomination": "raisin",
+      "societe": "nature",
+      "reference": "22",
+      "prixHT": "5",
+      "tva": "20"
+    },
+    {
+      "id": 4,
+      "denomination": "raisin",
+      "societe": "nature",
+      "reference": "22",
+      "prixHT": "5",
+      "tva": "20"
+    },
+    {
+      "id": 5,
+      "denomination": "raisin",
+      "societe": "nature",
+      "reference": "22",
+      "prixHT": "5",
+      "tva": "20"
+    }
   ]
 }

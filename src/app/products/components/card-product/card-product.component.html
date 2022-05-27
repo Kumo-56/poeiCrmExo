@@ -1,0 +1,18 @@
+
+<mat-card class="example-card" *ngIf="product">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{product.denomination}}</mat-card-title>
+    <mat-card-subtitle>référence: {{product.reference}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="/assets/images/pomme.jpg" alt="{{product.denomination}}">
+  <mat-card-content >
+    <p >Société: {{product.societe}}</p>
+    <p >Prix hors taxe: {{product.prixHT}}</p>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="deleteProduct(product.id)">Supprimer</button>
+    <button mat-button (click)="editProduct(product.id)">Modifier</button>
+  </mat-card-actions>
+</mat-card>

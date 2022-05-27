@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand text-white" >Product</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link text-white" [routerLink]="['/','products', 'add']">Add</a>
+      <a class="nav-item nav-link text-white" [routerLink]="['/','products', 'edit']">Edit</a>
+      <a class="nav-item nav-link text-white" [routerLink]="['/','products', 'list']">List</a>
+    </div>
+  </div>
+
+  <form class="d-flex form-inline md-form form-sm active-cyan active-cyan-2">
+    <app-icon-search></app-icon-search>
+
+    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+
+  </form>
+</nav>

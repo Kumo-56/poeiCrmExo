@@ -1,0 +1,6 @@
+export enum Tva{
+  TAUXNORMAL= "20",
+  TAUXINTERMEDIAIRE= "10",
+  TAUXREDUIT= "5,5",
+  TAUXPARTICULIER= "2,1"
+}

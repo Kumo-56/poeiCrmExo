@@ -1,0 +1,12 @@
+<app-nav-top-bar-product></app-nav-top-bar-product>
+<ng-container *ngIf="products">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 mx-auto my-1" *ngFor="let product of products">
+
+        <app-card-product [product]="product"> </app-card-product>
+
+      </div>
+    </div>
+  </div>
+</ng-container>

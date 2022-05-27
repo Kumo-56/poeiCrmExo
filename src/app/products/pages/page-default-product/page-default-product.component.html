@@ -1,0 +1,15 @@
+<app-nav-top-bar-product></app-nav-top-bar-product>
+
+<div *ngIf="product">
+  <h4>Id: </h4>
+  <p>{{product.id}}</p>
+  <h4>Nom: </h4>
+  <p> {{product.denomination}}</p>
+  <h4>Prénom: </h4>
+  <p> {{product.prixHT}}</p>
+  <h4>Adresse: </h4>
+  <p> {{product.societe}}</p>
+  <h4>Société: </h4>
+  <p> {{product.reference}}</p>
+</div>
+<button class="btn btn-primary" (click)="switchUpdate()">Modifier</button>

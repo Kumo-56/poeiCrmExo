@@ -8,12 +8,14 @@ const routes: Routes = [
   {path: 'login',
     loadChildren: () => import('./login/login.module').then(module_ => module_.LoginModule)
   },
-
   {path: 'orders',
     loadChildren: () => import('./orders/orders.module').then(module_ => module_.OrdersModule)
   },
   {path: 'clients',
     loadChildren: () => import('./clients/clients.module').then(c => c.ClientsModule)
+  },
+  {path: 'products',
+    loadChildren: () => import('./products/products.module').then(p => p.ProductsModule)
   },
   {path: '**',
     loadChildren: () => import('./page-not-found/Page-not-found.module').then(pnf => pnf.PageNotFoundModule)

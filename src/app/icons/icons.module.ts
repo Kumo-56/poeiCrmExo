@@ -5,6 +5,7 @@ import { IconCloseComponent } from './components/icon-close/icon-close.component
 import { IconEditComponent } from './components/icon-edit/icon-edit.component';
 import { IconDeleteComponent } from './components/icon-delete/icon-delete.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import { IconSearchComponent } from './components/icon-search/icon-search.component';
 
 
 @NgModule({
@@ -12,17 +13,19 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     IconNavComponent,
     IconCloseComponent,
     IconEditComponent,
-    IconDeleteComponent
+    IconDeleteComponent,
+    IconSearchComponent
   ],
   imports: [
     CommonModule,
     FontAwesomeModule
   ],
-  exports: [
-    IconNavComponent,
-    IconCloseComponent,
-    IconEditComponent,
-    IconDeleteComponent
-  ]
+    exports: [
+        IconNavComponent,
+        IconCloseComponent,
+        IconEditComponent,
+        IconDeleteComponent,
+        IconSearchComponent
+    ]
 })
 export class IconsModule { }
