@@ -6,6 +6,7 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    FormsModule
   ]
 })
 export class LoginModule { }

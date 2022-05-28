@@ -1,4 +1,18 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "email": "test@test.test",
+      "password": "test",
+      "role": "utilisateur"
+    },
+    {
+      "id": 2,
+      "email": "admin@admin.admin",
+      "password": "admin",
+      "role": "administrateur"
+    }
+  ],
   "clients": [
     {
       "id": 1,
