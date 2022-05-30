@@ -1,10 +1,18 @@
 <ng-template #tpConnecte>
 {{connected}}
   <h3>{{errorMsg}}</h3>
+
+
+  <button (click)="incrementVersion()">Increment</button>
+  <button (click)="decrementVersion()">Decrement</button>
 </ng-template>
 
 <ng-template #tpNonConnecte>
   {{connected}}
+
+
+  <button (click)="incrementVersion()">Increment</button>
+  <button (click)="decrementVersion()">Decrement</button>
 </ng-template>
 
 <ng-container *ngIf="connected; then tpConnecte else tpNonConnecte">

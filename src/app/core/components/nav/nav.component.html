@@ -19,7 +19,11 @@
   </button>
   <button  *ngIf="connected" (click)="disconnect()">
     Déconnection
+
+
   </button>
+
+  <p>Version: {{this.version$ | async }}</p>
 </div>
 </div>
 </nav>

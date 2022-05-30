@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthentificationService} from "../../services/authentification.service";
+import {UpdateVersionService} from "../../services/update-version.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-nav',
@@ -8,12 +10,15 @@ import {AuthentificationService} from "../../services/authentification.service";
 })
 export class NavComponent implements OnInit {
   public connected=false;
-  constructor(private authServices:AuthentificationService) { }
+  public version$!:Observable<number>;
+  constructor(private authServices:AuthentificationService,private  uptVersion:UpdateVersionService) { }
 
   ngOnInit(): void {
     this.authServices.connected$.subscribe({
       next:(statutConnexion)=>{ this.connected=statutConnexion;}
     })
+    this.version$=this.uptVersion.numVersion$.asObservable();
+
   }
 
 

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BehaviorSubject, Observable, ReplaySubject, Subject} from "rxjs";
+import {BehaviorSubject, map, Observable, ReplaySubject, Subject} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -30,6 +30,10 @@ export class AppComponent implements OnInit{
     subject.subscribe(value=>console.log(value));
     subject.subscribe(value=>console.log(value));
     subject.next('coucou');
+
+    subject.pipe(
+      map(value => console.log(`${value}modifigé`))
+    )
     subject.unsubscribe();
 
 

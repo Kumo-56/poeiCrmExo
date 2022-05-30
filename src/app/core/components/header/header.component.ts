@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthentificationService} from "../../services/authentification.service";
+import {Observable, Subject} from "rxjs";
+import {UpdateVersionService} from "../../services/update-version.service";
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   public connected:boolean =false;
   public errorMsg:string ='';
-  constructor(private authServices:AuthentificationService) { }
+  constructor(private authServices:AuthentificationService, private  uptVersion:UpdateVersionService) { }
 
   ngOnInit(): void {
     this.authServices.connected$.subscribe({
@@ -20,4 +22,11 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  incrementVersion():void{
+    this.uptVersion.increment();
+  }
+
+  decrementVersion():void{
+    this.uptVersion.decrement();
+  }
 }
