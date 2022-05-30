@@ -11,6 +11,7 @@ import { CardProductComponent } from './components/card-product/card-product.com
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {IconsModule} from "../icons/icons.module";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {IconsModule} from "../icons/icons.module";
     ProductsRoutingModule,
     MatCardModule,
     MatButtonModule,
-    IconsModule
+    IconsModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }

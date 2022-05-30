@@ -9,8 +9,10 @@ import {ProductsService} from "../../services/products.service";
   templateUrl: './card-product.component.html',
   styleUrls: ['./card-product.component.scss']
 })
+//UNUSED
 export class CardProductComponent implements OnInit {
   @Input() product?:Product;
+
 
   constructor(private location: Location,
               private router:Router,

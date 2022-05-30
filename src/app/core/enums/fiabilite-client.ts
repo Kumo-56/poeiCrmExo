@@ -1,4 +1,5 @@
 export enum FiabiliteClient {
   CLASSIQUE='CLASSIQUE',
-  RISQUE='RISQUE'
+  RISQUE='RISQUE',
+  HAUTRISQUE='HAUT RISQUE'
 }

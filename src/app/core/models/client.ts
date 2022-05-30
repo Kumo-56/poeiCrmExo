@@ -7,7 +7,9 @@ export class Client implements ClientI{
   prenom= '';
   societe= '';
   adresse= '';
-  fiabilite=FiabiliteClient.CLASSIQUE
+  fiabilite=FiabiliteClient.CLASSIQUE;
+  totalCaHT=0;
+  tauxImposition=0;
 
   constructor(obj? :Partial<Client>) {
     if (obj){

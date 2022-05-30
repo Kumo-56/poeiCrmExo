@@ -7,13 +7,19 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 import {MatButtonModule} from "@angular/material/button";
+import {TemplateModule} from "../template/template.module";
+import {IconsModule} from "../icons/icons.module";
+import { TableComponent } from './components/table/table.component';
+import { BtnComponent } from './components/btn/btn.component';
 
 @NgModule({
   declarations: [
     ModalComponent,
     ModalContentComponent,
     DialogComponent,
-    DialogContentComponent
+    DialogContentComponent,
+    TableComponent,
+    BtnComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +30,11 @@ import {MatButtonModule} from "@angular/material/button";
   exports:[
     ModalComponent,
     NgbModule,
-    DialogComponent
+    DialogComponent,
+    TemplateModule,
+    IconsModule,
+    TableComponent,
+    BtnComponent
   ]
 })
 export class SharedModule { }

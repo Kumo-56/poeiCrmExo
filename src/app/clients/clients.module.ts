@@ -9,6 +9,8 @@ import { NavTopBarComponent } from './components/nav-top-bar/nav-top-bar.compone
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../shared/shared.module";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { TotalCaPipe } from './pipes/total-ca.pipe';
+
 
 
 @NgModule({
@@ -16,13 +18,16 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     ClientsListComponent,
     AddClientComponent,
     EditClientComponent,
-    NavTopBarComponent
+    NavTopBarComponent,
+    TotalCaPipe
   ],
-  imports: [
-    CommonModule,
-    ClientsRoutingModule,
-    FormsModule,
-    SharedModule
-  ]
+    imports: [
+        CommonModule,
+        ClientsRoutingModule,
+        FormsModule,
+        SharedModule
+
+
+    ]
 })
 export class ClientsModule { }

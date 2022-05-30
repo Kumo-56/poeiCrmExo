@@ -20,7 +20,9 @@
       "prenom": "Boblff",
       "societe": "bandefffl",
       "adresse": "bdlfff",
-      "fiabilite": "CLASSIQUE"
+      "fiabilite": "HAUT RISQUE",
+      "totalCaHT": 344343434,
+      "tauxImposition": 5
     },
     {
       "id": 2,
@@ -28,7 +30,9 @@
       "prenom": "Bruce",
       "societe": "Batmob",
       "adresse": "Gotham",
-      "fiabilite": "CLASSIQUE"
+      "fiabilite": "RISQUE",
+      "totalCaHT": 344343434,
+      "tauxImposition": 5
     },
     {
       "id": 3,
@@ -36,7 +40,9 @@
       "prenom": "Indiana",
       "societe": "excavatrice",
       "adresse": "crypte",
-      "fiabilite": "CLASSIQUE"
+      "fiabilite": "RISQUE",
+      "totalCaHT": 344343434,
+      "tauxImposition": 5
     },
     {
       "id": 4,
@@ -44,7 +50,9 @@
       "prenom": "James",
       "societe": "MI6",
       "adresse": "????",
-      "fiabilite": "CLASSIQUE"
+      "fiabilite": "CLASSIQUE",
+      "totalCaHT": 344343434,
+      "tauxImposition": 5
     },
     {
       "id": 5,
@@ -52,7 +60,9 @@
       "prenom": "jjjjjjj",
       "societe": "jjjjjjjj",
       "adresse": "jjjjjjjjj",
-      "fiabilite": "CLASSIQUE"
+      "fiabilite": "CLASSIQUE",
+      "totalCaHT": 344343434,
+      "tauxImposition": 5
     },
     {
       "id": 6,
@@ -60,7 +70,9 @@
       "prenom": "ggggggggg",
       "societe": "gggggggg",
       "adresse": "ggggggggg",
-      "fiabilite": "CLASSIQUE"
+      "fiabilite": "CLASSIQUE",
+      "totalCaHT": 344343434,
+      "tauxImposition": 5
     },
     {
       "id": 7,
@@ -68,7 +80,9 @@
       "prenom": "abcde",
       "societe": "abc",
       "adresse": "Paris",
-      "fiabilite": "CLASSIQUE"
+      "fiabilite": "CLASSIQUE",
+      "totalCaHT": 344343434,
+      "tauxImposition": 5
     }
   ],
   "products": [
@@ -89,14 +103,6 @@
       "tva": "20"
     },
     {
-      "id": 7,
-      "denomination": "pomme",
-      "societe": "nature",
-      "reference": "22",
-      "prixHT": "5",
-      "tva": "20"
-    },
-    {
       "id": 8,
       "denomination": "orange",
       "societe": "nature",
@@ -106,6 +112,14 @@
     },
     {
       "id": 9,
+      "denomination": "poire",
+      "societe": "nature",
+      "reference": "22",
+      "prixHT": "5",
+      "tva": "20"
+    },
+    {
+      "id": 10,
       "denomination": "poire",
       "societe": "nature",
       "reference": "22",

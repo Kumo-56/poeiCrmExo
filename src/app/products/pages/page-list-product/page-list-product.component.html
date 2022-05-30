@@ -1,12 +1,32 @@
 <app-nav-top-bar-product></app-nav-top-bar-product>
+<app-template-full-width [title]="'Liste des produits'">
 <ng-container *ngIf="products">
   <div class="container">
     <div class="row">
       <div class="col-md-3 mx-auto my-1" *ngFor="let product of products">
 
-        <app-card-product [product]="product"> </app-card-product>
+        <mat-card class="example-card" *ngIf="product">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{product.denomination}}</mat-card-title>
+            <mat-card-subtitle>référence: {{product.reference}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="/assets/images/pomme.jpg" alt="{{product.denomination}}">
+          <mat-card-content >
+            <p >Société: {{product.societe}}</p>
+            <p >Prix hors taxe: {{product.prixHT}}</p>
+
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="deleteProduct(product.id)">Supprimer</button>
+            <button mat-button (click)="editProduct(product.id)">Modifier</button>
+          </mat-card-actions>
+        </mat-card>
+
 
       </div>
     </div>
   </div>
 </ng-container>
+  <app-dialog #dialog></app-dialog>
+</app-template-full-width>

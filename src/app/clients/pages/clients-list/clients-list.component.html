@@ -1,24 +1,50 @@
 <app-nav-top-bar></app-nav-top-bar>
-<div *ngIf="clients">
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Prénom</th>
-      <th scope="col">Adresse</th>
-      <th scope="col">Société</th>
-      <th scope="col" class="action">Action</th>
-    </tr>
-    </thead>
-    <tbody *ngFor="let client of clients">
-      <tr (click)="goToClientPage(client.id)">
+
+<app-template-full-width [title]="'Liste des clients'">
+
+<!--  <div *ngIf="clients">-->
+
+
+    <!--<table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Société</th>
+        <th scope="col" class="action">Action</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let client of clients">
+        <tr (click)="goToClientPage(client.id)">
+          <td>{{client.id}}</td>
+          <td>{{client.nom}}</td>
+          <td>{{client.prenom}}</td>
+          <td>{{client.societe}}</td>
+          <td>{{client.adresse}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    -->
+  <app-table [headers]="clientHeaders">
+
+      <tr *ngFor="let client of (clients$|async)"> <!--(click)="goToClientPage(client.id)"-->
         <td>{{client.id}}</td>
-        <td>{{client.nom}}</td>
-        <td>{{client.prenom}}</td>
+        <td>{{client.nom|uppercase}}</td>
+        <td>{{client.prenom| uppercase}}</td>
         <td>{{client.societe}}</td>
         <td>{{client.adresse}}</td>
+        <td>{{client.totalCaHT|totalCa:client.tauxImposition|currency}}</td>
+        <!--$event valeur de l'évènement -->
+        <select  (change)="updateFiabilite(client, $event)">
+          <option *ngFor="let fiabilite of fiabiliteStatus" [value]="fiabilite"  [selected]="fiabilite==client.fiabilite" >{{fiabilite}}</option>
+        </select>
+
       </tr>
-    </tbody>
-  </table>
-</div>
+
+
+  </app-table>
+<!--  </div>-->
+</app-template-full-width>
