@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {ClientsService} from "../../clients.service";
 import {Client} from "../../../core/models/client";
 import { ActivatedRoute } from '@angular/router';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-edit-client',
@@ -12,6 +13,7 @@ export class EditClientComponent implements OnInit {
   public client?:Client;
   public clientId?:number;
   public update:boolean;
+  public modalClosed:any;
   @ViewChild('modal') private modalComponent:any;
   @ViewChild('dialog') private dialogComponent:any;
 
@@ -48,7 +50,7 @@ export class EditClientComponent implements OnInit {
   }
 
   private setTitle():string {
-    return this.client!=null? "Modification du client: "+this.client.nom:"client inconnu";
+    return this.client!=null? "Modification du client: "+this.client.id:"client inconnu";
   }
 
   displayDialog():void{
@@ -57,19 +59,28 @@ export class EditClientComponent implements OnInit {
     this.dialogComponent.openDialog(title,msg );
   }
 
-  private displayModal():void{
+  private displayModal():Observable<any>{
     let title=this.setTitle();
     let msg=this.setMsg();
-    this.modalComponent.open(title, msg);
+    return this.modalComponent.open(title, msg);
   }
 
   //TODO: voir pour la gestion de la modale par rapport aux templates
   updateClient():void{
     let clientUpdate= this.newClient();
     this.clientsService.updateClient(clientUpdate).subscribe();
-    this.displayDialog();
 
-    console.log(this.dialogComponent.isClosed);
-    this.switchUpdate();
+    this.displayModal().subscribe({
+      next:(closed)=>{ this.modalClosed=closed;
+
+        //attends la fermeture de la modal pour effectuer le switch update et revenir à la page edit
+        if (this.modalClosed=="Close click"){
+          this.switchUpdate();
+        }
+      },
+      error:(err )=> {
+        console.log(err)}
+    })
+
   }
 }

@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Product} from "../../../core/models/product";
 import {Location} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ProductsService} from "../../products.service";
+import {ProductsService} from "../../services/products.service";
 
 @Component({
   selector: 'app-card-product',
